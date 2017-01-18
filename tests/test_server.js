@@ -35,6 +35,7 @@ setTimeout(function() {
 
     test.on('close', function(code) {
         server.kill();
+	fs.rmdir(pathData);
     });
 
 }, 500);
