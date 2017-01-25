@@ -10,7 +10,7 @@ app.use('/notes',router);
 
 
 app.listen(config.port, function(){
-	console.log("Test")
+	console.log("Démarrage serveur")
 })
 
 
