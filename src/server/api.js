@@ -36,6 +36,7 @@ router.get('/',function(req, res){
 
 router.post('/', function(req,res){
 	var note = req.body;
+	console.log(note);
 	note.id = uuid.v4();
 	note.date = Math.floor(Date.now() / 1000);
 	
