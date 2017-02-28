@@ -16,6 +16,8 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "chokidar": "^1.6.1",
+    "css-loader": "^0.26.2",
+    "file-loader": "^0.10.1",
     "frisby": "^0.8.5",
     "html-webpack-plugin": "^2.26.0",
     "jasmine-node": "^1.14.5",
@@ -28,6 +30,8 @@
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^2.3.1"
@@ -37,6 +41,7 @@
     "express": "^4.14.0",
     "fs-extra": "^2.0.0",
     "node-find-files": "0.0.4",
-    "node-uuid": "^1.4.7"
+    "node-uuid": "^1.4.7",
+    "react-bootstrap": "^0.30.7"
   }
 }

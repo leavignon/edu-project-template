@@ -3,7 +3,7 @@ class Client {
 	
 	
 	findAll(callback){
-		var request = new Request('/notes', {
+		var request = new Request('http://localhost:4000/notes', {
 			headers: new Headers ({
 				'Accept': 'application/json'
 			})
@@ -36,7 +36,7 @@ class Client {
 	}
 	
 	create(note){	
-		var request = new Request('/notes/', {	
+		var request = new Request('http://localhost:4000/notes/', {	
 		});
 		
 		

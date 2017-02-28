@@ -8,6 +8,8 @@ import configure from './store';
 
 import client from './client';
 
+require('bootstrap/dist/css/bootstrap.css');
+
 const store = configure();
 
 const history = syncHistoryWithStore(browserHistory, store);
@@ -56,9 +58,20 @@ class List extends Component {
 		var that = this;
 		console.log(this.state);
 		var notes = this.state.notes;
-		return (<ul>
-			{notes.map(each)}
-		</ul>);	
+		return (
+			<html>
+			<head>
+			<title>Title of the document</title>
+			</head>
+			<body>	
+			<p>Hello world</p>
+			<button className="btn btn-success">Truc</button>		
+				<ul>
+				{notes.map(each)}
+				</ul>
+			</body>
+			</html>
+		);	
 	}
 	
 };
