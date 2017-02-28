@@ -69,7 +69,7 @@ class List extends Component {
 			</div>
 			</div>
 			<br/>
-			<button className="btn btn-success">Ajouter une nouvelle note</button>
+			<Link to={'/new'}><button className="btn btn-success">Ajouter une nouvelle note</button></Link>
 				</div>
 		);	
 	}
@@ -151,18 +151,27 @@ class Create extends Component {
 		console.log(note);
 		const c = new client(); 
 		c.create(note);
+		browserHistory.push('/');
 	}
 	
 	render() {
-		return <form onSubmit={this.submit}>
-			<label> Title
-				<input type="text" value={this.state.title} onChange={this.titleChange} />
-			</label>
-			<label> Content
-				<input type="text" value={this.state.content} onChange={this.contentChange} />
-			</label>
-			<input type="submit" value="Submit"/>
-			</form>
+		return (<div className="container">
+			<h3>Créer une nouvelle note</h3>
+			<hr/>
+				<form onSubmit={this.submit}>
+					<div className="form-group">
+						<label htmlFor="title"> Title
+							<input type="text" value={this.state.title} onChange={this.titleChange} id="title" className="form-control"/>
+						</label>
+					</div>
+					<div className="form-group">
+						<label htmlFor="content"> Content
+							<textarea value={this.state.content} onChange={this.contentChange} id="content" className="form-control"></textarea>
+						</label>
+					</div>
+					<input type="submit" value="Submit" className="btn btn-info"/>
+				</form>
+			</div>)
 	}
 	
 };
