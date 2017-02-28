@@ -51,26 +51,26 @@ class List extends Component {
 	
 	render() {
 		var each = function(note) {
-			return (<li key={note.id}><Link to={'/' + note.id} >{note.content}</Link><button value={note.id} onClick={this.delete} >Delete </button></li>)
+			return (<li key={note.id} className="list-group-item"><Link to={'/' + note.id} >{note.content}</Link><button value={note.id} onClick={this.delete} >Delete </button></li>)
 		}
 		each = each.bind(this);
 		
 		var that = this;
 		console.log(this.state);
 		var notes = this.state.notes;
-		return (
-			<html>
-			<head>
-			<title>Title of the document</title>
-			</head>
-			<body>	
-			<p>Hello world</p>
-			<button className="btn btn-success">Truc</button>		
-				<ul>
+		return (<div className="container">	
+			<h3>Liste des notes</h3>
+			<hr/>
+			<div className="row">
+			<div className="col-sm-4">	
+				<ul className="list-group">
 				{notes.map(each)}
 				</ul>
-			</body>
-			</html>
+			</div>
+			</div>
+			<br/>
+			<button className="btn btn-success">Ajouter une nouvelle note</button>
+				</div>
 		);	
 	}
 	
@@ -93,7 +93,28 @@ class Details extends Component {
 		console.log(this.state);
 		var note = this.state.note;
 		
-		return <div> {note.id} <br/> {note.title} <br/> {note.content} </div>
+		return (<div className="container">
+			<h3>Consulter une note</h3>
+			<hr/>
+			<div className="row">
+			<div className="col-sm-6">
+			<div className="panel panel-default">
+			<div className="panel-heading">
+				<h3 className="panel-title"> {note.title} </h3>
+			</div>
+			<div className="panel-body">
+				{note.content}
+			</div>
+			</div>
+			</div>
+			</div>
+			<br/>
+			<span className="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {note.id}
+			<br/>
+			<br/>
+			<Link to={'/'}><span className="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Retour </Link>		
+			</div>
+			)
 	}
 	
 };

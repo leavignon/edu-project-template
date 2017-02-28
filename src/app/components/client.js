@@ -3,7 +3,7 @@ class Client {
 	
 	
 	findAll(callback){
-		var request = new Request('http://localhost:4000/notes', {
+		var request = new Request('/notes', {
 			headers: new Headers ({
 				'Accept': 'application/json'
 			})
